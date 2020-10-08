@@ -9,7 +9,7 @@ setuptools.setup(
     author="Lavanya Vijayakrishnan",
     author_email="lavanyavijayakrishnan@gmail.com",
     description="A small example package",
-    long_description=README,
+    long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/lavanyavijayk/deep-compare",
     packages=setuptools.find_packages(),

@@ -4,7 +4,7 @@
 Deep Compare is a simple module that lets the user compare two variables irrespective of their current datatype.
 
 ## Installation
-$ pip install deep-compare
+$ pip install -i https://test.pypi.org/simple/ deep-compare
 
 ## Requirements
  - Python3.7+
@@ -14,7 +14,7 @@ $ pip install deep-compare
 install the Deep Compare package using the command
 
 ```bash
-$ pip install deep-compare
+$ pip install -i https://test.pypi.org/simple/ deep-compare
 ```
 
 you will be able to use package after installation by importing it in your python file like
