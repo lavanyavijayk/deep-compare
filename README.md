@@ -1,5 +1,5 @@
 # Deep Compare
-/github/pipenv/locked/python-version/:user/:repo  	/apm/l/:packageName
+![Python 3.7](https://img.shields.io/badge/python-3.7+-blue.svg) ![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
 
 Deep Compare is a simple module that lets the user compare two variables irrespective of their current datatype.
 
@@ -9,7 +9,7 @@ $ pip install deep-compare
 ## Requirements
  - Python3.7+
 
-Usage
+## Usage
 
 install the Deep Compare package using the command
 
@@ -23,7 +23,7 @@ from deep-compare import compare_variables.CompareVariables
 ```
 CompareVariables includes 11 methods
 
-1. is_float(value)
+##### 1. is_float(value)
     returns True if the value is an integer or float, else returns False.
 
 ```python
@@ -41,11 +41,12 @@ is_float = CompareVariables.is_float(a)
 print(is_float)
 ```
 output
+
 ```bash
 >>> False
 ```
 
-2. is_date_time(value)
+##### 2. is_date_time(value)
     returns True if value is a date or date-time(if the input datatype is a string the date or datetime must be in iso time format and the python version used must be 3.7 or above) else returns False.
 
 ```python
@@ -54,6 +55,7 @@ is_date_time = CompareVariables.is_date_time(a)
 print(is_date_time)
 ```
 output
+
 ```bash
 >>> True
 ```
@@ -63,11 +65,12 @@ is_date_time = CompareVariables.is_date_time(a)
 print(is_date_time)
 ```
 output
+
 ```bash
 >>> False
 ```
 
-3. can_literal_eval(value)
+##### 3. can_literal_eval(value)
     returns True if value is a list, dict, tuple, set etc.
 
 ```python
@@ -76,11 +79,12 @@ can_literal_eval = CompareVariables.can_literal_eval(a)
 print(can_literal_eval)
 ```
 output
+
 ```bash
 >>> True
 ```
 
-4. is_complex(value):
+##### 4. is_complex(value):
     returns True if value is a complex number else returns False.
 
 ```python
@@ -89,6 +93,7 @@ is_complex = CompareVariables.is_complex(a)
 print(is_complex)
 ```
 output
+
 ```bash
 >>> True
 ```
@@ -98,11 +103,12 @@ is_complex = CompareVariables.is_complex(a)
 print(is_complex)
 ```
 output
+
 ```bash
 >>> False
 ```
 
-5. compare(value1, value2)
+##### 5. compare(value1, value2)
     returns True if the values are equal else returns False.
 
 ```python
@@ -112,6 +118,7 @@ output = CompareVariables.compare(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> True
 ```
@@ -122,10 +129,11 @@ output = CompareVariables.compare(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> False
 ```
-6. compare_date(value1, value2):
+##### 6. compare_date(value1, value2):
     returns True if the two input date values(value can be iso time format string also) are equal else returns False.
 
 ```python
@@ -135,6 +143,7 @@ output = CompareVariables.compare_date(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> True
 ```
@@ -145,11 +154,12 @@ output = CompareVariables.compare_date(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> False
 ```
 
-7. compare_datetime(value1, value2):
+##### 7. compare_datetime(value1, value2):
     returns True if the input two input datetime values(value can be iso time format string also) are equal else returns False.
 
 ```python
@@ -161,6 +171,7 @@ output = CompareVariables.compare_datetime(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> True
 ```
@@ -171,11 +182,12 @@ output = CompareVariables.compare_datetime(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> False
 ```
 
-8. datatype_check(value):
+##### 8. datatype_check(value):
     returns the input value in its correct datatype else returns False.
 
 ```python
@@ -184,11 +196,12 @@ output = CompareVariables.datatype_check(a)
 print(output)
 ```
 output
+
 ```bash
 >>> 3+4j
 ```
 
-9. compare_list_or_tuples_or_set(value1, value2):
+##### 9. compare_list_or_tuples_or_set(value1, value2):
     returns True if the input values(list/tuple/set) are equal else returns False.
 
 ```python
@@ -198,6 +211,7 @@ output = CompareVariables.compare_list_or_tuples_or_set(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> True
 ```
@@ -208,11 +222,12 @@ output = CompareVariables.compare_list_or_tuples_or_set(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> False
 ```
 
-10. compare_dicts(value1, value2):
+##### 10. compare_dicts(value1, value2):
     returns True if the input values(dicts) are equal else returns False.
 
 ```python
@@ -222,6 +237,7 @@ output = CompareVariables.compare_dicts(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> True
 ```
@@ -232,11 +248,12 @@ output = CompareVariables.compare_dicts(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> False
 ```
 
-11. type_matching_and_compare(value1, value2):
+##### 11. type_matching_and_compare(value1, value2):
     returns True if the values are equal irrespective of the input datatype else returns False.
 
 ```python
@@ -246,6 +263,7 @@ output = CompareVariables.type_matching_and_compare(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> True
 ```
@@ -256,6 +274,7 @@ output = CompareVariables.type_matching_and_compare(a,b)
 print(output)
 ```
 output
+
 ```bash
 >>> False
 ```
