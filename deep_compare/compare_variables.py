@@ -174,10 +174,14 @@ class CompareVariables:
         @return Boolean: True if the values are equal.'''
 
         if len(value1) == len(value2):
-            for index, i in enumerate(value1):
-                if CompareVariables.datatype_check(i) != CompareVariables.datatype_check(value2[index]):
-                    return False
-            return True
+            if isinstance((type(value1),type(value2)),set) or isinstance((type(value1),type(value2)),tuple):
+                value1 = list(value1)
+                value2 = list(value2)
+            value1 = list(CompareVariables.datatype_check(i) for i in value1)
+            value2 = list(CompareVariables.datatype_check(i) for i in value2)
+            value1.sort()
+            value2.sort()
+            return CompareVariables.compare(value1,value2)
         else:
             return False
 
@@ -199,7 +203,7 @@ class CompareVariables:
             return False
 
     @staticmethod
-    def type_matching_and_compare(value1, value2):
+    def deep_compare(value1, value2, date_only = False):
         '''Compares two values and returns True or False irrespective of their datatype
         @params value: Inputs 2 parameters to compare
         @return Boolean: True if the values are equal.'''
@@ -215,6 +219,8 @@ class CompareVariables:
         elif bool(value1) == bool(value2) == False:
             return True
         elif CompareVariables.is_date_time(value1) and CompareVariables.is_date_time(value2):
+            if date_only:
+                return CompareVariables.compare_date(value1, value2)
             if type(value1) == date or type(value2) == date:
                 return CompareVariables.compare_date(value1, value2)
             else:
@@ -223,7 +229,7 @@ class CompareVariables:
             if type(literal_eval(str(value1))) == type(literal_eval(str(value2))):
                 if isinstance(literal_eval(str(value1)), dict):
                     return CompareVariables.compare_dicts(literal_eval(str(value1)), literal_eval(str(value2)))
-                elif isinstance(literal_eval(str(value1)), (list, tuple)):
+                elif isinstance(literal_eval(str(value1)), (list, tuple,set)):
                     return CompareVariables.compare_list_or_tuples_or_set(literal_eval(str(value1)), literal_eval(str(value2)))
                 else:
                     return CompareVariables.compare(literal_eval(str(value1)), literal_eval(str(value2)))
@@ -231,4 +237,6 @@ class CompareVariables:
                 return False
         else:
             return CompareVariables.compare(str(value1).strip(), str(value2).strip())
+
+
 

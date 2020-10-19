@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="deep-compare", 
-    version="1.0.2",
+    version="1.0.4",
     author="Lavanya Vijayakrishnan",
     author_email="lavanyavijayakrishnan@gmail.com",
     description="A package to compare variables irrespective of their datatype",

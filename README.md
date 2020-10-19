@@ -19,7 +19,7 @@ $ pip install deep-compare
 
 you will be able to use package after installation by importing it in your python file like
 ```python
-from deep_compare.compare_variables import CompareVariables
+from deep_compare import CompareVariables
 ```
 CompareVariables includes 11 methods
 
@@ -253,13 +253,13 @@ output
 >>> False
 ```
 
-##### 11. type_matching_and_compare(value1, value2):
+##### 11. deep_compare(value1, value2):
     returns True if the values are equal irrespective of the input datatype else returns False.
 
 ```python
 a = '{"1":"2",3:5}'
 b = {1:2,3:5}
-output = CompareVariables.type_matching_and_compare(a,b)
+output = CompareVariables.deep_compare(a,b)
 print(output)
 ```
 output
@@ -270,13 +270,39 @@ output
 ```python
 a = '[1,2,3,44]'
 b = '["1","2","3"]'
-output = CompareVariables.type_matching_and_compare(a,b)
+output = CompareVariables.deep_compare(a,b)
 print(output)
 ```
 output
 
 ```bash
 >>> False
+```
+
+when comparing two datetime objects(or datetime string object) if the user only wants to compare the dates they can pass an *arg
+in the deep_compare function as shown below:  
+
+```python
+a = datetime(2020,5,2,12,48)
+b = datetime(2020,5,2,10,18)
+output = CompareVariables.deep_compare(a,b,date_only = True)
+print(output)
+```
+output
+
+```bash
+>>> True
+```
+```python
+a = '2020-05-02 12:48'
+b = '2020-05-02'
+output = CompareVariables.deep_compare(a,b,date_only = True)
+print(output)
+```
+output
+
+```bash
+>>> True
 ```
 
 ## Communication
